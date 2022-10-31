@@ -32,56 +32,385 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblxd7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblMoneda = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        lblxd = new javax.swing.JLabel();
+        lblCp = new javax.swing.JLabel();
+        lblClabe = new javax.swing.JLabel();
+        lblxd3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblCuenta1 = new javax.swing.JLabel();
+        lblRfc = new javax.swing.JLabel();
+        lblDomicilio = new javax.swing.JLabel();
+        lblCiudad = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblxd1 = new javax.swing.JLabel();
+        lblSaldoFinal = new javax.swing.JLabel();
+        lblxd4 = new javax.swing.JLabel();
+        lblxd5 = new javax.swing.JLabel();
+        lblxd6 = new javax.swing.JLabel();
+        lblSaldoInicial = new javax.swing.JLabel();
+        lblDepositos = new javax.swing.JLabel();
+        lblRetiros = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
+        lblxd7.setBackground(new java.awt.Color(204, 204, 204));
+        lblxd7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd7.setText("Saldo inicial (anterior)");
+        lblxd7.setAlignmentX(-1.0F);
+        lblxd7.setAlignmentY(-1.0F);
+        lblxd7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd7.setOpaque(true);
+        lblxd7.setPreferredSize(new java.awt.Dimension(55, 18));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(720, 750));
+        setSize(new java.awt.Dimension(720, 750));
 
-        jButton1.setText("Archivo...");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setAlignmentX(0.0F);
+        jPanel1.setAlignmentY(0.0F);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setText("Seleccione...");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(607, 29, -1, -1));
+
+        jLabel1.setText("Seleccione el archivo a cargar:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 7, -1, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(399, 29, -1, 23));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 29, -1, -1));
+
+        jLabel2.setText("Seleccione el mes:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 32, -1, -1));
+
+        jLabel3.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("DETALLE DE MOVIMIENTOS");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel3.setOpaque(true);
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 710, 30));
+
+        lblNombre.setBackground(new java.awt.Color(255, 204, 0));
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre.setAlignmentX(-1.0F);
+        lblNombre.setAlignmentY(-1.0F);
+        lblNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        lblNombre.setOpaque(true);
+        jPanel1.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 290, 30));
+
+        lblMoneda.setBackground(new java.awt.Color(255, 255, 255));
+        lblMoneda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMoneda.setAlignmentX(-1.0F);
+        lblMoneda.setAlignmentY(-1.0F);
+        lblMoneda.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMoneda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblMoneda.setOpaque(true);
+        lblMoneda.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 170, 30));
+
+        jLabel9.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("MONEDA");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel9.setOpaque(true);
+        jLabel9.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 120, 30));
+
+        jLabel10.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("CLABE");
+        jLabel10.setAlignmentX(-1.0F);
+        jLabel10.setAlignmentY(-1.0F);
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel10.setOpaque(true);
+        jLabel10.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 120, 30));
+
+        lblxd.setBackground(new java.awt.Color(204, 204, 204));
+        lblxd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd.setText("Saldo final");
+        lblxd.setAlignmentX(-1.0F);
+        lblxd.setAlignmentY(-1.0F);
+        lblxd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd.setOpaque(true);
+        lblxd.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblxd, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 230, 20));
+
+        lblCp.setBackground(new java.awt.Color(255, 255, 255));
+        lblCp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCp.setAlignmentX(-1.0F);
+        lblCp.setAlignmentY(-1.0F);
+        lblCp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCp.setOpaque(true);
+        lblCp.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblCp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 290, 20));
+
+        lblClabe.setBackground(new java.awt.Color(255, 255, 255));
+        lblClabe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClabe.setAlignmentX(-1.0F);
+        lblClabe.setAlignmentY(-1.0F);
+        lblClabe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblClabe.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblClabe.setOpaque(true);
+        lblClabe.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblClabe, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 170, 30));
+
+        lblxd3.setBackground(new java.awt.Color(255, 255, 255));
+        lblxd3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd3.setAlignmentX(-1.0F);
+        lblxd3.setAlignmentY(-1.0F);
+        lblxd3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd3.setOpaque(true);
+        lblxd3.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblxd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 180, 170, 30));
+
+        jLabel5.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("CUENTA CONTABLE");
+        jLabel5.setAlignmentX(-1.0F);
+        jLabel5.setAlignmentY(-1.0F);
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel5.setOpaque(true);
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 290, 30));
+
+        lblCuenta1.setBackground(new java.awt.Color(255, 255, 255));
+        lblCuenta1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCuenta1.setAlignmentX(-1.0F);
+        lblCuenta1.setAlignmentY(-1.0F);
+        lblCuenta1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCuenta1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCuenta1.setOpaque(true);
+        lblCuenta1.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblCuenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 170, 30));
+
+        lblRfc.setBackground(new java.awt.Color(255, 255, 255));
+        lblRfc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRfc.setAlignmentX(-1.0F);
+        lblRfc.setAlignmentY(-1.0F);
+        lblRfc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblRfc.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblRfc.setOpaque(true);
+        lblRfc.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblRfc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 290, 20));
+
+        lblDomicilio.setBackground(new java.awt.Color(255, 255, 255));
+        lblDomicilio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDomicilio.setAlignmentX(-1.0F);
+        lblDomicilio.setAlignmentY(-1.0F);
+        lblDomicilio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblDomicilio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblDomicilio.setOpaque(true);
+        lblDomicilio.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 290, 20));
+
+        lblCiudad.setBackground(new java.awt.Color(255, 255, 255));
+        lblCiudad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCiudad.setAlignmentX(-1.0F);
+        lblCiudad.setAlignmentY(-1.0F);
+        lblCiudad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCiudad.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblCiudad.setOpaque(true);
+        lblCiudad.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 290, 20));
+
+        jLabel4.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("ESTADO DE CUENTA");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel4.setOpaque(true);
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 58, 710, 42));
+
+        lblxd1.setBackground(new java.awt.Color(204, 204, 204));
+        lblxd1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd1.setText("CUENTA");
+        lblxd1.setAlignmentX(-1.0F);
+        lblxd1.setAlignmentY(-1.0F);
+        lblxd1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd1.setOpaque(true);
+        lblxd1.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblxd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 120, 30));
+
+        lblSaldoFinal.setBackground(new java.awt.Color(255, 255, 255));
+        lblSaldoFinal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSaldoFinal.setAlignmentX(-1.0F);
+        lblSaldoFinal.setAlignmentY(-1.0F);
+        lblSaldoFinal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSaldoFinal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblSaldoFinal.setOpaque(true);
+        lblSaldoFinal.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblSaldoFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 230, 20));
+
+        lblxd4.setBackground(new java.awt.Color(204, 204, 204));
+        lblxd4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd4.setText("Depósitos");
+        lblxd4.setAlignmentX(-1.0F);
+        lblxd4.setAlignmentY(-1.0F);
+        lblxd4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd4.setOpaque(true);
+        lblxd4.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblxd4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 230, 20));
+
+        lblxd5.setBackground(new java.awt.Color(204, 204, 204));
+        lblxd5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd5.setText("Retiros");
+        lblxd5.setAlignmentX(-1.0F);
+        lblxd5.setAlignmentY(-1.0F);
+        lblxd5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd5.setOpaque(true);
+        lblxd5.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblxd5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 230, 20));
+
+        lblxd6.setBackground(new java.awt.Color(204, 204, 204));
+        lblxd6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblxd6.setText("Saldo inicial (anterior)");
+        lblxd6.setAlignmentX(-1.0F);
+        lblxd6.setAlignmentY(-1.0F);
+        lblxd6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblxd6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblxd6.setOpaque(true);
+        lblxd6.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblxd6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 230, 20));
+
+        lblSaldoInicial.setBackground(new java.awt.Color(255, 255, 255));
+        lblSaldoInicial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSaldoInicial.setAlignmentX(-1.0F);
+        lblSaldoInicial.setAlignmentY(-1.0F);
+        lblSaldoInicial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblSaldoInicial.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblSaldoInicial.setOpaque(true);
+        lblSaldoInicial.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblSaldoInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 230, 20));
+
+        lblDepositos.setBackground(new java.awt.Color(255, 255, 255));
+        lblDepositos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDepositos.setAlignmentX(-1.0F);
+        lblDepositos.setAlignmentY(-1.0F);
+        lblDepositos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblDepositos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblDepositos.setOpaque(true);
+        lblDepositos.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblDepositos, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 230, 20));
+
+        lblRetiros.setBackground(new java.awt.Color(255, 255, 255));
+        lblRetiros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRetiros.setAlignmentX(-1.0F);
+        lblRetiros.setAlignmentY(-1.0F);
+        lblRetiros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblRetiros.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblRetiros.setOpaque(true);
+        lblRetiros.setPreferredSize(new java.awt.Dimension(55, 18));
+        jPanel1.add(lblRetiros, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 230, 20));
+
+        jLabel6.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("Resumen del periodo");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel6.setOpaque(true);
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 710, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Fecha", "Descripción", "Depósitos", "Retiros", "Subtotal"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 710, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jButton1)
-                .addContainerGap(291, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jButton1)
-                .addContainerGap(235, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       try{
-           JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        
-           if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-               
-               File archivo = fileChooser.getSelectedFile();
+        try{
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+
+            if (fileChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+
+                File archivo = fileChooser.getSelectedFile();
                 byte archivoBytes[] = Files.readAllBytes(archivo.toPath());
-                
+
                 String contenido = new String(archivoBytes, StandardCharsets.UTF_8);
-                
+
                 Cuenta cuenta = new Cuenta().deserializar(contenido);
-           }
-           
-           
-       }catch (Exception ex){
-           System.err.println("Error: " + ex.getMessage());
-       }
+            }
+
+        }catch (Exception ex){
+            System.err.println("Error: " + ex.getMessage());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -121,5 +450,37 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblCiudad;
+    private javax.swing.JLabel lblClabe;
+    private javax.swing.JLabel lblCp;
+    private javax.swing.JLabel lblCuenta1;
+    private javax.swing.JLabel lblDepositos;
+    private javax.swing.JLabel lblDomicilio;
+    private javax.swing.JLabel lblMoneda;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblRetiros;
+    private javax.swing.JLabel lblRfc;
+    private javax.swing.JLabel lblSaldoFinal;
+    private javax.swing.JLabel lblSaldoInicial;
+    private javax.swing.JLabel lblxd;
+    private javax.swing.JLabel lblxd1;
+    private javax.swing.JLabel lblxd3;
+    private javax.swing.JLabel lblxd4;
+    private javax.swing.JLabel lblxd5;
+    private javax.swing.JLabel lblxd6;
+    private javax.swing.JLabel lblxd7;
     // End of variables declaration//GEN-END:variables
 }
