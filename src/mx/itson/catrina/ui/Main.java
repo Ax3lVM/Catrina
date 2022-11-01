@@ -507,9 +507,9 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(lblxd3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCp, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMoneda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCp, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -562,7 +562,7 @@ public class Main extends javax.swing.JFrame {
                 byte archivoBytes[] = Files.readAllBytes(archivo.toPath());
 
                 String contenido = new String(archivoBytes, StandardCharsets.UTF_8);
-
+                
                 Cuenta cuenta = new Cuenta().deserializar(contenido);
                 int meses = cboMeses.getSelectedIndex();
                 //Producto
@@ -592,12 +592,12 @@ public class Main extends javax.swing.JFrame {
                 DateFormat formatoFecha = new SimpleDateFormat("dd '/' MM '/' yyyy");
                 double subtotal = cuenta.obtenerSaldoInicial(meses);
 
-                for (Movimiento m : cuenta.obtenerMovimientosFiltrados(meses)) {
+                for (Movimiento m : cuenta.filtrarMovimientos(meses)) {
 
                     switch (m.getTipo()) {
                         case RETIRO:
                             subtotal = subtotal - m.getCantidad();
-                            model.addRow(new Object[]{
+                            model.addRow(new Object[]{ 
                                 formatoFecha.format(m.getFecha()),
                                 m.getDescripcion(),
                                 "",

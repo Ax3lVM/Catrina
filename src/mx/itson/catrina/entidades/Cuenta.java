@@ -102,7 +102,11 @@ public class Cuenta {
     public void setMovimientos(List<Movimiento> movimientos) {
         this.movimientos = movimientos;
     }
-
+/**
+ * 
+ * @param json deselealiza un archivo con extensión JSON
+ * @return retorna un string deserializado
+ */
     public Cuenta deserializar(String json) {
         Cuenta cuenta = new Cuenta();
         try {
@@ -112,8 +116,12 @@ public class Cuenta {
         }
         return cuenta;
     }
-
-    public List<Movimiento> obtenerMovimientosFiltrados(int mes) {
+    /**
+ * 
+ * @param mes obtiene los movimientos filtrandolos por mes
+ * @return movimientosFiltrados
+ */
+    public List<Movimiento> filtrarMovimientos(int mes) {
         List<Movimiento> movimientosFiltrados = new ArrayList();
 
         for (Movimiento movimientosFiltrado : movimientos) {
@@ -124,10 +132,14 @@ public class Cuenta {
         movimientosFiltrados.sort((m1, m2) -> m1.getFecha().compareTo(m2.getFecha()));
         return movimientosFiltrados;
     }
-
+/**
+ * 
+ * @param mes obtiene los depositos filtrandolos por mes y evaluando si la cantidad es de tipo retiro
+ * @return depositos
+ */
     public double obtenerDepositos(int mes) {
         double depositos = 0;
-        for (Movimiento movimiento : obtenerMovimientosFiltrados(mes)) {
+        for (Movimiento movimiento : filtrarMovimientos(mes)) {
             if (movimiento.getTipo() == Tipo.DEPOSITO) {
                 depositos = depositos + movimiento.getCantidad();
             }
@@ -135,10 +147,13 @@ public class Cuenta {
         return depositos;
 
     }
-
+/**
+ * @param mes  obtiene los retiros filtrandolos por mes y evaluando si la cantidad es de tipo retiro
+ * @return retiros
+ */
     public double obtenerRetiros(int mes) {
         double retiros = 0;
-        for (Movimiento movimiento : obtenerMovimientosFiltrados(mes)) {
+        for (Movimiento movimiento : filtrarMovimientos(mes)) {
             if (movimiento.getTipo() == Tipo.RETIRO) {
                 retiros = retiros + movimiento.getCantidad();
             }
@@ -146,7 +161,10 @@ public class Cuenta {
         return retiros;
 
     }
-
+/**
+ * @param mes obtiene el saldoInicial
+ * @return saldoInicial
+ */
     public double obtenerSaldoInicial(int mes) {
         double saldoInicial = 0;
         for (Movimiento movimiento : movimientos) {
@@ -160,7 +178,10 @@ public class Cuenta {
         }
         return saldoInicial;
     }
-
+/**
+ * @param mes obtiene el saldo final sumando el saldo inicial más depósitos menos el total de retiros
+ * @return saldoFinal
+ */
     public double obtenerSaldoFinal(int mes) {
         double saldoFinal = (obtenerSaldoInicial(mes) + obtenerDepositos(mes)) - obtenerRetiros(mes);
 

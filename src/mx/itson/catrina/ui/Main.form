@@ -194,11 +194,11 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="lblCp" min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="lblMoneda" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="lblCp" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblxd6" min="-2" pref="20" max="-2" attributes="0"/>
