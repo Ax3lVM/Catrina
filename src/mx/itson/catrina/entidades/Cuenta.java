@@ -10,7 +10,8 @@ import java.util.List;
 import mx.itson.catrina.enumeradores.Tipo;
 
 /**
- *
+ *  Contiene las variables del Objeto cuenta, cliente y movimientos. 
+ *  Contiene los metodos para generar los reportes
  * @author axelt
  */
 public class Cuenta {
@@ -121,7 +122,7 @@ public class Cuenta {
  * @param mes obtiene los movimientos filtrandolos por mes
  * @return movimientosFiltrados
  */
-    public List<Movimiento> filtrarMovimientos(int mes) {
+    public List<Movimiento> obtenerMovimientosPorMes(int mes) {
         List<Movimiento> movimientosFiltrados = new ArrayList();
 
         for (Movimiento movimientosFiltrado : movimientos) {
@@ -139,7 +140,7 @@ public class Cuenta {
  */
     public double obtenerDepositos(int mes) {
         double depositos = 0;
-        for (Movimiento movimiento : filtrarMovimientos(mes)) {
+        for (Movimiento movimiento : obtenerMovimientosPorMes(mes)) {
             if (movimiento.getTipo() == Tipo.DEPOSITO) {
                 depositos = depositos + movimiento.getCantidad();
             }
@@ -153,7 +154,7 @@ public class Cuenta {
  */
     public double obtenerRetiros(int mes) {
         double retiros = 0;
-        for (Movimiento movimiento : filtrarMovimientos(mes)) {
+        for (Movimiento movimiento : obtenerMovimientosPorMes(mes)) {
             if (movimiento.getTipo() == Tipo.RETIRO) {
                 retiros = retiros + movimiento.getCantidad();
             }

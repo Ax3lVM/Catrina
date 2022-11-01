@@ -7,7 +7,7 @@ package mx.itson.catrina.enumeradores;
 import com.google.gson.annotations.SerializedName;
 
 /**
- *
+ * Interpreta el valor del tipo a un enumerador
  * @author axelt
  */
 public enum Tipo {

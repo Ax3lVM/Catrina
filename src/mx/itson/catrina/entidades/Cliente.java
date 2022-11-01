@@ -7,7 +7,7 @@ package mx.itson.catrina.entidades;
 
 
 /**
- *
+ * Almacena las varables del Objeto cliente
  * @author axelt
  */
     public class Cliente {

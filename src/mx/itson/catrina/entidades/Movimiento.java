@@ -8,7 +8,7 @@ import java.util.Date;
 import mx.itson.catrina.enumeradores.Tipo;
 
 /**
- *
+ *  Contiene las variable que almacenan los datos del Objeto Movimiento
  * @author axelt
  */
 public class Movimiento {

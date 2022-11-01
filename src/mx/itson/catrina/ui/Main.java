@@ -8,7 +8,7 @@ import com.google.gson.Gson;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.security.MessageDigest;
+
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -21,14 +21,12 @@ import mx.itson.catrina.entidades.Movimiento;
 import mx.itson.catrina.enumeradores.Tipo;
 
 /**
- *
+ *  Clase principal del programa Catrina
  * @author axelt
  */
 public class Main extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Main
-     */
+    
     public Main() {
         initComponents();
         setLocationRelativeTo(null);
@@ -470,14 +468,14 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cboMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2)))
-                .addGap(197, 197, 197)
+                        .addComponent(cboMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(185, 185, 185)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -613,7 +611,7 @@ public class Main extends javax.swing.JFrame {
                 DateFormat formatoFecha = new SimpleDateFormat("dd '/' MM '/' yyyy");
                 double subtotal = cuenta.consultarSaldoInicial(meses);
 
-                for (Movimiento m : cuenta.filtrarMovimientos(meses)) {
+                for (Movimiento m : cuenta.obtenerMovimientosPorMes(meses)) {
 
                     switch (m.getTipo()) {
                         case RETIRO:
@@ -649,7 +647,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void cboMesesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboMesesActionPerformed
-
+        
     }//GEN-LAST:event_cboMesesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
