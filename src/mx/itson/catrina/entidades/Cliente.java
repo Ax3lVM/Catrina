@@ -4,25 +4,32 @@
  */
 package mx.itson.catrina.entidades;
 
+
+
 /**
  *
  * @author axelt
  */
-public class Cliente {
-
+    public class Cliente {
+        private String nombre;
+        private String domicilio;
+        private String rfc;
+        private String cp;
+        private String ciudad;
     /**
-     * @return the codigo
+     * @return the ciudad
      */
-    public String getCodigo() {
-        return codigo;
+    public String getCiudad() {
+        return ciudad;
     }
 
     /**
-     * @param codigo the codigo to set
+     * @param ciudad the ciudad to set
      */
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
+    
 
     /**
      * @return the nombre
@@ -69,19 +76,18 @@ public class Cliente {
     /**
      * @return the cp
      */
-    public int getCp() {
+    public String getCp() {
         return cp;
     }
 
     /**
      * @param cp the cp to set
      */
-    public void setCp(int cp) {
+    public void setCp(String cp) {
         this.cp = cp;
     }
-    private String codigo;
-    private String nombre;
-    private String domicilio;
-    private String rfc;
-    private int cp;
+    
+    
+    
+    
 }

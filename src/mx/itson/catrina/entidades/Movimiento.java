@@ -5,12 +5,32 @@
 package mx.itson.catrina.entidades;
 
 import java.util.Date;
+import mx.itson.catrina.enumeradores.Tipo;
 
 /**
  *
  * @author axelt
  */
 public class Movimiento {
+
+    /**
+     * @return the mes
+     */
+  
+
+    /**
+     * @return the tipo
+     */
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    /**
+     * @param tipo the tipo to set
+     */
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
 
     /**
      * @return the fecha
@@ -56,4 +76,6 @@ public class Movimiento {
     private Date fecha;
     private String descripcion;
     private Double cantidad;
+    private Tipo tipo;
+
 }
