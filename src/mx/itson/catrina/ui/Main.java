@@ -31,6 +31,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        setLocationRelativeTo(null);
         cboMeses.addItem("Enero");
         cboMeses.addItem("Febrero");
         cboMeses.addItem("Marzo");
@@ -92,6 +93,7 @@ public class Main extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         cboMeses = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
 
         lblxd7.setBackground(new java.awt.Color(204, 204, 204));
         lblxd7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -104,9 +106,10 @@ public class Main extends javax.swing.JFrame {
         lblxd7.setPreferredSize(new java.awt.Dimension(55, 18));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setSize(new java.awt.Dimension(720, 650));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setAlignmentX(0.0F);
         jPanel1.setAlignmentY(0.0F);
 
@@ -406,6 +409,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("X");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -458,10 +468,15 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(lblSaldoFinalPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cboMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cboMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2)))
                 .addGap(197, 197, 197)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -473,9 +488,15 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel1)
-                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel1)
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -581,16 +602,16 @@ public class Main extends javax.swing.JFrame {
                 //Resumen del periodo
                 lblDepositos.setText("" + formatoMoneda.format(cuenta.obtenerDepositos(meses)));
                 lblRetiros.setText("" + formatoMoneda.format(cuenta.obtenerRetiros(meses)));
-                lblSaldoInicial.setText("" + formatoMoneda.format(cuenta.obtenerSaldoInicial(meses)));
-                lblSaldoFinal.setText("" + formatoMoneda.format(cuenta.obtenerSaldoFinal(meses)));
+                lblSaldoInicial.setText("" + formatoMoneda.format(cuenta.consultarSaldoInicial(meses)));
+                lblSaldoFinal.setText("" + formatoMoneda.format(cuenta.consultarSaldoFinal(meses)));
                 
-                lblSaldoFinalPeriodo.setText("" + formatoMoneda.format(cuenta.obtenerSaldoFinal(meses)) );
+                lblSaldoFinalPeriodo.setText("" + formatoMoneda.format(cuenta.consultarSaldoFinal(meses)) );
                         
                 DefaultTableModel model = (DefaultTableModel) tblMovimientos.getModel();
                 model.setRowCount(0);
 
                 DateFormat formatoFecha = new SimpleDateFormat("dd '/' MM '/' yyyy");
-                double subtotal = cuenta.obtenerSaldoInicial(meses);
+                double subtotal = cuenta.consultarSaldoInicial(meses);
 
                 for (Movimiento m : cuenta.filtrarMovimientos(meses)) {
 
@@ -631,6 +652,10 @@ public class Main extends javax.swing.JFrame {
 
     }//GEN-LAST:event_cboMesesActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -669,6 +694,7 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboMeses;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

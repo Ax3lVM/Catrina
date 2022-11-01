@@ -165,7 +165,7 @@ public class Cuenta {
  * @param mes obtiene el saldoInicial
  * @return saldoInicial
  */
-    public double obtenerSaldoInicial(int mes) {
+    public double consultarSaldoInicial(int mes) {
         double saldoInicial = 0;
         for (Movimiento movimiento : movimientos) {
             for (int i = 0; i < mes; i++) {
@@ -182,8 +182,8 @@ public class Cuenta {
  * @param mes obtiene el saldo final sumando el saldo inicial más depósitos menos el total de retiros
  * @return saldoFinal
  */
-    public double obtenerSaldoFinal(int mes) {
-        double saldoFinal = (obtenerSaldoInicial(mes) + obtenerDepositos(mes)) - obtenerRetiros(mes);
+    public double consultarSaldoFinal(int mes) {
+        double saldoFinal = (consultarSaldoInicial(mes) + obtenerDepositos(mes)) - obtenerRetiros(mes);
 
         return saldoFinal;
     }
